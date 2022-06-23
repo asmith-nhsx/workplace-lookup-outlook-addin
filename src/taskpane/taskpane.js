@@ -47,7 +47,7 @@ export async function run() {
         let li = document.createElement("li");
         li.innerHTML = "<a href='" + url + "' target='_workplacePopup'>" + toName + "</a>";
         listTo.appendChild(li);
-        seen.append(toName);
+        seen.push(toName);
       }
     }
   }
