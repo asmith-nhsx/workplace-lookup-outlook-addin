@@ -25,7 +25,7 @@ In order to use this add-in you must "sideload" it and run it in a local Node in
 
 1. Download the zipped code from this repository
    
-   ![GitDownload](GitDownload.png)
+   ![GitDownload](GitDownload.PNG)
    
 1. Extract the code to a folder on your local disk 
 1. Open a command line, e.g. PowerShell on Windows
@@ -69,7 +69,7 @@ In order to use this add-in you must "sideload" it and run it in a local Node in
    
 4. You should now see a list of links for contacts in the message, click on the links to be taken to the internal workplace directory and search for the contact:
    
-   ![WorkplaceLookup](WorkplaceLookup.png)
+   ![WorkplaceLookup](WorkplaceLookup.PNG)
    
 ## Stopping and uninstalling the add-in
 
