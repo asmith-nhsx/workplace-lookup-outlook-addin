@@ -35,16 +35,20 @@ export async function run() {
   emails = emails.concat(item.to);
   emails = emails.concat(item.cc);
   emails = emails.sort(function(a,b) { return a.emailAddress.localeCompare(b.emailAddress)});
+  let seen = [];
   for (let add of emails) {
     let pos = add.displayName.indexOf("(DEPARTMENT OF HEALTH AND SOCIAL CARE)");
     if (pos > -1) {
       let dNames = add.displayName.substring(0, pos).split(',');
       let toName = dNames[1] + dNames[0]
       toName = toTitleCase(toName);
-      let url = template.replace("<<NAME>>", toName);
-      let li = document.createElement("li");
-      li.innerHTML = "<a href='" + url + "' target='_workplacePopup'>" + toName + "</a>";
-      listTo.appendChild(li);
+      if (!seen.includes(toName)) {
+        let url = template.replace("<<NAME>>", toName);
+        let li = document.createElement("li");
+        li.innerHTML = "<a href='" + url + "' target='_workplacePopup'>" + toName + "</a>";
+        listTo.appendChild(li);
+        seen.append(toName);
+      }
     }
   }
 }
